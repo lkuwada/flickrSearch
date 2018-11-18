@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--Photos Collection View Controller-->
         <scene sceneID="ac5-XG-2zW">
             <objects>
-                <collectionViewController id="Q6N-zS-ihA" sceneMemberID="viewController">
+                <collectionViewController id="Q6N-zS-ihA" customClass="PhotosCollectionViewController" customModule="SearchFlickr" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Rxf-ZQ-s29">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,7 +61,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             <connections>
-                                <outlet property="delegate" destination="Q6N-zS-ihA" id="sqm-Tp-rho"/>
+                                <outlet property="delegate" destination="Q6N-zS-ihA" id="Vg4-Q0-2Ay"/>
                             </connections>
                         </textField>
                     </navigationItem>
