@@ -50,6 +50,18 @@ class PhotosCollectionViewController: UICollectionViewController, UITextFieldDel
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == searchResults.count - 1 {
+            page += 1
+            flickrSearch.searchForTerm(term: currentTerm, page: page, completion: { photos in
+                if let photos = photos {
+                    self.searchResults.append(contentsOf: photos)
+                    self.collectionView?.reloadData()
+                }
+            })
+        }
+    }
+    
     // MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let term = textField.text else {
